@@ -1,5 +1,8 @@
 from errbot import BotPlugin, botcmd
 
+class MyClass(object):
+    pass
+
 class StorageTester(BotPlugin):
     """ This tests the storage backend.
     """
@@ -28,8 +31,6 @@ class StorageTester(BotPlugin):
         if len(self) != 0:
             return 'ERROR: Should be length 0'
 
-        class MyClass(object):
-            pass
 
         self.log.debug('test class serialization')
         self['clazz'] = MyClass()
